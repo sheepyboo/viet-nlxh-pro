@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Viết NLXH Pro</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#f5f7fb;
+  --sidebar:#1e293b;
+  --primary:#4f46e5;
+  --accent:#7c3aed;
+  --green:#22c55e;
+  --blue:#3b82f6;
+  --gray:#e5e7eb;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:"Inter",sans-serif;
+  background:var(--bg);
+  display:flex;
+}
+
+/* SIDEBAR */
+.sidebar{
+  width:260px;
+  background:var(--sidebar);
+  color:#fff;
+  height:100vh;
+  padding:20px;
+}
+.sidebar h2{font-size:18px;margin-bottom:15px}
+.sidebar .step{
+  padding:10px;
+  border-radius:8px;
+  margin-bottom:8px;
+  cursor:pointer;
+}
+.sidebar .step.active{
+  background:#334155;
+}
+
+/* MAIN */
+.main{flex:1;padding:20px}
+
+/* HEADER */
+.header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:20px;
+}
+.nav span{
+  margin:0 10px;
+  cursor:pointer;
+  font-weight:500;
+}
+
+/* BANNER */
+.banner{
+  background:linear-gradient(135deg,#4f46e5,#7c3aed);
+  color:#fff;
+  padding:30px;
+  border-radius:14px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.banner button{
+  margin-top:10px;
+  background:#fff;
+  color:#4f46e5;
+  border:none;
+  padding:10px 16px;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+/* PROGRESS */
+.progress{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin:25px 0;
+}
+.circle{
+  width:40px;height:40px;
+  border-radius:50%;
+  background:#ddd;
+  display:flex;align-items:center;justify-content:center;
+}
+.circle.done{background:var(--green);color:#fff}
+.circle.current{background:var(--blue);color:#fff}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+}
+
+/* CARD */
+.card{
+  background:#fff;
+  padding:15px;
+  border-radius:12px;
+}
+
+/* TEXTAREA */
+textarea{
+  width:100%;
+  height:150px;
+  margin-top:10px;
+}
+
+/* BUTTON */
+.btn{
+  background:var(--primary);
+  color:#fff;
+  border:none;
+  padding:8px 14px;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+/* STATS */
+.stats{
+  display:flex;
+  gap:20px;
+  margin-top:20px;
+}
+.stat{
+  background:#fff;
+  padding:15px;
+  border-radius:10px;
+  flex:1;
+}
+
+/* TABS */
+.tab{display:none}
+.tab.active{display:block}
+</style>
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+  <h2>TIẾN TRÌNH VIẾT</h2>
+  <div class="step active" onclick="openTab(0)">1. Tạo tình huống</div>
+  <div class="step" onclick="openTab(1)">2. Tìm ý</div>
+  <div class="step" onclick="openTab(2)">3. Lập dàn ý</div>
+  <div class="step" onclick="openTab(3)">4. Viết bản thảo</div>
+  <div class="step" onclick="openTab(4)">5. Phản hồi</div>
+  <div class="step" onclick="openTab(5)">6. Chỉnh sửa</div>
+  <div class="step" onclick="openTab(6)">7. Công bố</div>
+</div>
+
+<div class="main">
+
+<!-- HEADER -->
+<div class="header">
+  <h2>Viết NLXH Pro</h2>
+  <div class="nav">
+    <span>Trang chủ</span>
+    <span>Học liệu</span>
+    <span>Thư viện</span>
+  </div>
+</div>
+
+<!-- BANNER -->
+<div class="banner">
+  <div>
+    <h2>Thất bại có phải là dấu chấm hết?</h2>
+    <p>Viết bài NLXH ~600 chữ</p>
+    <button onclick="openTab(3)">Bắt đầu viết</button>
+  </div>
+</div>
+
+<!-- PROGRESS -->
+<div class="progress">
+  <div class="circle done">1</div>
+  <div class="circle done">2</div>
+  <div class="circle done">3</div>
+  <div class="circle current">4</div>
+  <div class="circle">5</div>
+  <div class="circle">6</div>
+  <div class="circle">7</div>
+</div>
+
+<!-- TAB 1 -->
+<div class="tab active">
+  <div class="card">
+    <h3>Tình huống viết</h3>
+    <p>Thất bại giúp con người trưởng thành và hoàn thiện.</p>
+  </div>
+</div>
+
+<!-- TAB 2 -->
+<div class="tab">
+  <div class="card">
+    <h3>Tìm ý</h3>
+    <ul>
+      <li>Thất bại là gì?</li>
+      <li>Ý nghĩa?</li>
+      <li>Dẫn chứng?</li>
+    </ul>
+  </div>
+</div>
+
+<!-- TAB 3 -->
+<div class="tab">
+  <div class="card">
+    <h3>Dàn ý</h3>
+    <p>Mở bài – Thân bài – Kết bài</p>
+  </div>
+</div>
+
+<!-- TAB 4 -->
+<div class="tab">
+  <div class="card">
+    <h3>Viết bài</h3>
+    <textarea id="essay"></textarea>
+    <button class="btn" onclick="save()">Lưu</button>
+  </div>
+</div>
+
+<!-- TAB 5 -->
+<div class="tab">
+  <div class="card">
+    <h3>Phản hồi</h3>
+    <label><input type="checkbox"> Logic</label><br>
+    <label><input type="checkbox"> Rõ ràng</label>
+    <textarea placeholder="Góp ý..."></textarea>
+  </div>
+</div>
+
+<!-- TAB 6 -->
+<div class="tab">
+  <div class="card">
+    <h3>Chỉnh sửa</h3>
+    <p>So sánh bản trước và sau</p>
+  </div>
+</div>
+
+<!-- TAB 7 -->
+<div class="tab">
+  <div class="card">
+    <h3>Công bố</h3>
+    <p>Bài viết của bạn đã hoàn thành 🎉</p>
+  </div>
+</div>
+
+<!-- GRID -->
+<div class="grid">
+  <div class="card">
+    <h4>Học liệu</h4>
+    <p>Cách viết NLXH</p>
+  </div>
+  <div class="card">
+    <h4>Rubric</h4>
+    <p>⭐⭐⭐⭐</p>
+  </div>
+  <div class="card">
+    <h4>Portfolio</h4>
+    <p>Tiến trình học tập</p>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat">
+    <h4>Tiến độ</h4>
+    <p>5/7 bước</p>
+  </div>
+  <div class="stat">
+    <h4>Điểm TB</h4>
+    <p>8.2</p>
+  </div>
+</div>
+
+</div>
+
+<script>
+function openTab(i){
+  document.querySelectorAll(".tab").forEach(t=>t.classList.remove("active"));
+  document.querySelectorAll(".tab")[i].classList.add("active");
+
+  document.querySelectorAll(".sidebar .step").forEach(s=>s.classList.remove("active"));
+  document.querySelectorAll(".sidebar .step")[i].classList.add("active");
+}
+
+function save(){
+  let val=document.getElementById("essay").value;
+  localStorage.setItem("essay",val);
+  alert("Đã lưu!");
+}
+
+window.onload=function(){
+  let val=localStorage.getItem("essay");
+  if(val) document.getElementById("essay").value=val;
+}
+</script>
+
+</body>
+</html>
